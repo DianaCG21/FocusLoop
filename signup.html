@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FocusLoop</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  <style>
+    body {
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: 'Poppins', sans-serif;
+      overflow: hidden;
+      position: relative;
+      background: linear-gradient(270deg, #FFD6E0, #FFE4E9, #E0F7FA, #FFF3E0);
+      background-size: 800% 800%;
+      animation: gradientShift 20s ease infinite;
+      transition: opacity 0.5s ease;
+    }
+    body.fade-out { opacity: 0; }
+
+     @keyframes gradientShift { 
+      0% { background-position: 0% 50%; } 
+      50% { background-position: 100% 50%; } 
+      100% { background-position: 0% 50%; } 
+    }
+     .floating-icon { position: absolute; opacity:0.65; animation: float 6s ease-in-out infinite, rotate 12s linear infinite; }
+    @keyframes float { 0% {transform:translateY(0) scale(1);} 50% {transform:translateY(-20px) scale(1.05);} 100% {transform:translateY(0) scale(1);} }
+    @keyframes rotate { 0% {transform:rotate(0deg);} 100% {transform:rotate(360deg);} }
+
+    .signup-card {
+      background-color: #FFFFFF;
+      padding: 40px 30px;
+      border-radius: 20px;
+      text-align: center;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+      max-width: 450px;
+      width: 90%;
+      z-index: 10;
+      animation: fadeIn 1.5s ease forwards;
+    }
+
+     @keyframes fadeIn { 0% {opacity:0; transform:translateY(-20px);} 100% {opacity:1; transform:translateY(0);} }
+
+    .login-card h1 { font-size: 2rem; color:#FF4C82; margin-bottom:20px; font-weight:600; }
+    .form-control { border-radius:50px; padding:12px 20px; margin-bottom:15px; border:1px solid #ddd; }
+    .btn-custom { background-color:#FF8FB1; color:white; font-weight:600; padding:12px 28px; border-radius:50px; border:none; transition:all 0.3s ease; box-shadow:0 5px 15px rgba(255,143,177,0.4); margin:10px 0; width:100%; }
+    .btn-custom:hover { background-color:#FF4C82; color:#FFFFFF; box-shadow:0 0 25px #FF4C82,0 0 50px #FF8FB1; transform:translateY(-3px) scale(1.05); }
+
+     .icon1 { top:70%; left:8%; width:50px; animation-delay:2s; }
+    .icon2 { top:18%; right:10%; width:50px; animation-delay:1s; }
+    .icon3 { bottom:20%; left:25%; width:60px; animation-delay:2.5s; }
+    .icon4 { top:30%; right:25%; width:50px; animation-delay:0.8s; }
+    .icon5 { bottom:5%; right:10%; width:40px; animation-delay:1.2s; }
+    .icon6 { top:5%; right:40%; width:55px; animation-delay:2.8s; }
+  </style>
+</head>
+
+<body onbeforeunload="document.body.classList.add('fade-out')">
+   <img src="https://img.icons8.com/?size=100&id=bGUKaREIDZlh&format=png&color=000000" class="floating-icon icon1" alt="college icon"/>
+   <img src="https://img.icons8.com/?size=100&id=GvBNdSXHyyvy&format=png&color=000000" class="floating-icon icon2" alt="book icon"/>
+   <img src="https://img.icons8.com/?size=100&id=67393&format=png&color=000000" class="floating-icon icon6" alt="pen icon"/>
+   <img src="https://img.icons8.com/?size=100&id=u5cuCiQTxlJ2&format=png&color=000000" class="floating-icon icon3" alt="desk icon"/>
+   <img src="https://img.icons8.com/?size=100&id=Q26ogqJBwm60&format=png&color=000000" class="floating-icon icon4" alt="desktop computer icon"/>
+   <img src="https://img.icons8.com/?size=100&id=77lc33vi2ErW&format=png&color=000000" class="floating-icon icon5" alt="bag icon"/>
+   
+
+   <div class="signup-card">
+  <h1>Sign Up</h1>
+  <form action="#" method="POST">
+      <input type="text" class="form-control" placeholder="Email or Username" required>
+      <input type="password" class="form-control" placeholder="Password" required>
+      <input type="password" class="form-control" placeholder="Confirm-Password" required>
+      <button type="submit" class="btn btn-custom">Submit</button>
+    </form>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+    crossorigin="anonymous">
+  </script>
+  
+</body>
+
+</html>
